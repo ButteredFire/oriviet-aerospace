@@ -1,9 +1,83 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import { Image } from 'astro:assets';
+import topLeftPreview from '../assets/Background/AstroceleratePreview-TopLeft.png';
+import bottomRightPreview from '../assets/Background/AstroceleratePreview-BottomRight.png';
+
+const labsLogoPath = '/Logos/OrivietResearchLabsLogo.svg';
 ---
 
 <Layout title='Research'>
-    <h2>Oriviet Research Lab</h2>
-	<p>Oriviet Research Lab is the research and development arm of Oriviet Aerospace, created with a singular mission: to decentralize aerospace and simulation knowledge for the Vietnamese engineering community.</p>
-    <p>Here, you will find original technical documentation, Vietnamese-language graphics tutorials, and foundational insights into the architecture behind Astrocelerate—Vietnam's first orbital simulation engine.</p>
+    <div class="hero-section">
+        <Image src={topLeftPreview} alt="Astrocelerate - Top-Left" class="hero-overlain-content background-preview top-left"/>
+        <Image src={bottomRightPreview} alt="Astrocelerate - Bottom-Right" class="hero-overlain-content background-preview bottom-right"/>
+
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content hero-on-top">
+            <div>
+                <img src={labsLogoPath} alt="Oriviet Research Labs Logo" class="h-40 w-auto mb-5"/>
+            </div>
+
+            <div>
+                <p class="text-xl text-center max-w-2xl">Oriviet Research Labs is the research and development arm of Oriviet Aerospace, created with a singular mission: to decentralize aerospace and simulation knowledge for the Vietnamese engineering community.</p>
+            </div>
+
+            <a href="https://research.oriviet.org/" class="mt-8 px-8 py-3 btn font-semibold rounded-lg transition duration-300">
+                Projects in development
+            </a>
+        </div>
+    </div>
 </Layout>
+
+<!--<p>Here, you will find original technical documentation, Vietnamese-language graphics tutorials, and foundational insights into the architecture behind Astrocelerate—Vietnam's first orbital simulation engine.</p> -->
+
+<style>
+    html, body {
+		overflow: hidden;
+	}
+
+    .btn {
+        background-color: transparent;
+        color: white;
+    }
+    .btn:hover {
+        background-color: white;
+        color: black;
+        text-shadow: none;
+    }
+
+    .hero-section {
+		position: relative; /* Needed for absolute positioning of children */
+		width: 100%;
+		height: calc(100vh - 64px); /* Full viewport height minus header height (h-16) */
+		overflow: hidden; /* Ensures image and overlay don't spill */
+		display: flex;
+		align-items: center;
+        vertical-align: middle;
+        justify-content: center;
+		text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Adds readability to text */
+	}
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+		align-items: center;
+        vertical-align: middle;
+    }
+
+    .background-preview {
+        position: absolute;
+		width: 40%;
+		height: auto;
+    }
+    .top-left {
+		top: 0;
+		left: 0;
+    }
+    .bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+</style>

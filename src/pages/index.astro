@@ -11,14 +11,14 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 		<Image
 		  src={landingPageBg}
 		  alt="Oriviet Aerospace Background"
-		  class="hero-background-image"
+		  class="hero-background-image hero-overlain-content"
 		  widths={[768, 1200, 1920]}
 		  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
 		  loading="eager"/>
 
 		<div class="hero-overlay"></div>
 	
-		<div class="hero-content">
+		<div class="hero-content hero-on-top">
 		  <img src={logoPath} alt="Oriviet Aerospace Logo" class="h-40 w-auto mb-5"/>
 		  <h1 class="text-5xl font-bold mb-5 text-center">Grounded in Vietnam. Engineered for the stars.</h1>
 		  <p class="text-xl text-center max-w-2xl">
@@ -32,7 +32,7 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 	</div>
 
 	<div class="bottom-text">
-		<p>Image: Chandra X-Ray Observatory orbiting the Earth. This is an in-engine screenshot of <a href="/research" class="font-bold">Astrocelerate</a>, Oriviet Aerospace's flagship product.</p>
+		<p>Image: Chandra X-Ray Observatory orbiting the Earth. This is an in-engine screenshot of <a href="https://github.com/ButteredFire/Astrocelerate-public/tree/main" target="_blank" class="font-bold">Astrocelerate</a>, Oriviet Aerospace's flagship scientific simulation engine.</p>
 	</div>
 </Layout>
 
@@ -70,18 +70,8 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 		object-fit: cover; /* Ensures image covers the entire container */
 	}
   
-	.hero-overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.25); /* Black overlay with 60% opacity */
-	}
-  
 	.hero-content {
 		position: relative; /* Ensures content is on top of overlay */
-		z-index: 1; /* Bring content to the foreground */
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -1,10 +1,100 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets'; // Astro's Image component for optimized images
+import landingPageBg from '../assets/Background/LandingPageBg.png';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 ---
 
 <Layout>
-	<p>Oriviet Aerospace develops advanced software for scientific aerospace simulations, supporting academic research and industry innovation worldwide.</p>
+	<div class="hero-section">
+		<Image
+		  src={landingPageBg}
+		  alt="Oriviet Aerospace Background"
+		  class="hero-background-image"
+		  widths={[768, 1200, 1920]}
+		  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+		  loading="eager"/>
+
+		<div class="hero-overlay"></div>
+	
+		<div class="hero-content">
+		  <img src={logoPath} alt="Oriviet Aerospace Logo" class="h-40 w-auto mb-5"/>
+		  <h1 class="text-5xl font-bold mb-5 text-center">Grounded in Vietnam. Engineered for the stars.</h1>
+		  <p class="text-xl text-center max-w-2xl">
+			Explore our cutting-edge research and development in aerospace technology, shaping the future of spaceflight for Vietnam and humanity.
+		  </p>
+
+		  <a href="/research" class="mt-8 px-8 py-3 hover:bg-black font-semibold rounded-lg transition duration-300">
+			Discover Our Research
+		  </a>
+		</div>
+	</div>
+
+	<div class="bottom-text">
+		<p>Image: Chandra X-Ray Observatory orbiting the Earth. This is an in-engine screenshot of <a href="/research" class="font-bold">Astrocelerate</a>, Oriviet Aerospace's flagship product.</p>
+	</div>
 </Layout>
+
+
+<style>
+	html, body {
+		overflow: hidden;
+	}
+
+	.bottom-text {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		margin-left: 10px;
+	}
+
+	.hero-section {
+		position: relative; /* Needed for absolute positioning of children */
+		width: 100%;
+		height: calc(100vh - 64px); /* Full viewport height minus header height (h-16) */
+		overflow: hidden; /* Ensures image and overlay don't spill */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Adds readability to text */
+	}
+  
+	.hero-background-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* Ensures image covers the entire container */
+	}
+  
+	.hero-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.25); /* Black overlay with 60% opacity */
+	}
+  
+	.hero-content {
+		position: relative; /* Ensures content is on top of overlay */
+		z-index: 1; /* Bring content to the foreground */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem; /* Add some padding around the content */
+	}
+  
+	/* Adjustments for smaller screens */
+	@media (max-width: 768px) {
+		.hero-content h1 {
+			font-size: 3.5rem; /* Smaller font size for mobile */
+		}
+		.hero-content p {
+			font-size: 1rem; /* Smaller font for mobile */
+		}
+	}
+  </style>

@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+/* This wrapper accounts for the header navbar */
+.main-wrapper {
+    min-height: calc(100vh - (var(--spacing) * 16));
+    display: flex;
+    flex-direction: column;
+}

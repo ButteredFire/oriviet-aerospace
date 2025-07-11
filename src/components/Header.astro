@@ -1,0 +1,44 @@
+---
+const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
+---
+
+<header class="bg-black text-white px-4 py-3 shadow-md flex relative">
+    <nav class="container mx-auto flex items-center justify-center h-16">
+        <a href="/" class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center h-full"> {/* Make the 'a' tag take full height of nav */}
+            <img
+              src={logoPath}
+              alt="Oriviet Aerospace Logo"
+              class="h-10 w-auto object-contain"> {/* Set a specific height for the image, let width auto-scale */}
+        </a>
+
+        <ul class="flex-grow flex justify-center items-center space-x-6">
+            <li><a href="/research" class="font-bold nav-link uppercase">Research & Development</a></li>
+            <li><a href="/team" class="font-bold nav-link uppercase">Team</a></li>
+            <li><a href="/about" class="font-bold nav-link uppercase">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<style>
+    .nav-link {
+        position: relative;
+        padding-bottom: 2px; /* Space for the underline */
+        transition: color 0.2s ease-in-out;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0%;
+        height: 1px; /* Underline thickness */
+        background-color: white; /* Underline color */
+        transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Animate width and color */
+    }
+    .nav-link:hover::after {
+        width: 100%; /* Expand underline on hover */
+        left: 0;
+        right: auto;
+    }
+</style>

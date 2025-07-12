@@ -1,0 +1,77 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// NOTE: Refer to https://www.astroicon.dev/guides/customization/ for information on installing and using Iconify icons
+// For instance, Iconify's Bootstrap icons are referred to as `bi` (e.g., name="bi:linkedin"), and are installed with `npm install @iconify-json/bi`
+import { Icon } from 'astro-icon/components';
+
+import { Image } from 'astro:assets';
+import portrait from '../../assets/General/FounderPortrait.png';
+---
+
+<Layout title='Team'>
+    <div class="card-section p-6 mb-8 flex items-center justify-center">
+        <div class="image-content ml-8">
+            <Image src={portrait} alt="Portrait" width={150} height={150} class="rounded-full object-cover"/>
+        </div>
+
+        <div class="p-10 relative">
+            <h2 class="font-extrabold text-5xl font-bold">Founder & CEO</h2>
+            <span class="inline-flex">
+                <h2 class="font-semibold text-3xl">Dương Duy Nhật Minh</h2>
+                <div class="ml-2 mr-2"></div>
+                <h2 class="text-3xl text-gray-600">(Minh "TCO" Duong)</h2>
+            </span>
+
+            <p class="mt-2.5 mb-2.5 text-xl max-xl">Founder of Oriviet Aerospace, architect of <a href="https://github.com/ButteredFire/Astrocelerate-public/tree/main" target="_blank" class="font-bold">Astrocelerate</a>, and sole author of <a href="/research">Oriviet Research Labs</a>.</p>
+
+            <div class="icons-container justify-content-start">
+                <a target="_blank" href="https://www.github.com/ButteredFire/"><Icon name="bi:github"/></a>
+                <a target="_blank" href="https://www.facebook.com/zacker.nick.9/"><Icon name="bi:facebook"/></a>
+                <a target="_blank" href="https://www.linkedin.com/in/minhduong-thechosenone/"><Icon name="bi:linkedin"/></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-10 flex items-center justify-center">
+            <p class="text-2xl text-center">
+                "If the infrastructure does not exist, it must be written. If the path is missing, it must be paved. If no one is coming, I will go first."
+            </p>
+    </div>
+  
+    <div class="p-10 card-section justify-evenly text-center max-w-5xl">
+        <div class="text-xl">
+            <h2 class="font-extrabold text-5xl font-bold mb-10">Summary</h2>
+            <p>Minh is a 17-year-old high school senior majoring in English at a specialized high school in Vietnam.</p>
+            <br/>
+            <p>With a lifelong obsession for the unknown, and a belief that spaceflight should not be the privilege of a few nations, Minh founded Oriviet Aerospace to develop the tools, systems, and software that Vietnam currently lacks — but desperately needs.</p>
+        </div>
+    </div>
+  </Layout>
+  
+  <style>
+    .icons-container {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+    }
+    .icons-container svg { /* <Icon .../> is really just a wrapper around <svg .../> */
+        margin-right: 10px;
+        width: 1.5em;
+        height: auto;
+    }
+
+    .card-section {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+  
+    .text-content {
+      flex-grow: 1; /* Allows text content to take up available space */
+    }
+  
+    .image-content {
+      flex-shrink: 0; /* Prevents image from shrinking */
+    }
+  </style>

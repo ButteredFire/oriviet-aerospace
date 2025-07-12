@@ -8,12 +8,38 @@ html, body {
     color: white;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: black; 
+}
+::-webkit-scrollbar-thumb {
+    background: #555; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+}
+
+
+/* Tailwind: font-bold */
+a {
+    --tw-font-weight: var(--font-weight-bold) /* 700 */;
+    font-weight: var(--font-weight-bold) /* 700 */;
+}
+@property --tw-font-weight {
+    syntax: "*";
+    inherits: false;
+}
+
 /* This wrapper accounts for the header navbar */
 .main-wrapper {
     min-height: calc(100vh - (var(--spacing) * 16));
     display: flex;
     flex-direction: column;
 }
+
 
 /* Used to overlay backdrops to put focus on the main hero content. */
 .hero-overlay {
@@ -32,4 +58,18 @@ html, body {
 /* Content on top of the overlay. */
 .hero-on-top {
     z-index: 2;
+}
+
+
+/* Buttons */
+.btn-white-on-transparent {
+    background-color: transparent;
+    color: white;
+    padding-block: calc(var(--spacing) * 3);    /* Tailwind: py-3 */
+    padding-inline: calc(var(--spacing) * 8);   /* Tailwind: px-8 */
+}
+.btn-white-on-transparent:hover {
+    background-color: white;
+    color: black;
+    text-shadow: none;
 }

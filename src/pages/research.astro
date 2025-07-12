@@ -4,12 +4,14 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import topLeftPreview from '../assets/Background/AstroceleratePreview-TopLeft.png';
 import bottomRightPreview from '../assets/Background/AstroceleratePreview-BottomRight.png';
+import background from '../assets/Background/LandingPageBg-NoSat.png';
 
 const labsLogoPath = '/Logos/OrivietResearchLabsLogo.svg';
 ---
 
 <Layout title='Research'>
     <div class="hero-section">
+        <Image src={background} alt="Background" class="hero-overlain-content background-preview background-main"/>
         <Image src={topLeftPreview} alt="Astrocelerate - Top-Left" class="hero-overlain-content background-preview top-left"/>
         <Image src={bottomRightPreview} alt="Astrocelerate - Bottom-Right" class="hero-overlain-content background-preview bottom-right"/>
 
@@ -24,7 +26,7 @@ const labsLogoPath = '/Logos/OrivietResearchLabsLogo.svg';
                 <p class="text-xl text-center max-w-2xl">Oriviet Research Labs is the research and development arm of Oriviet Aerospace, created with a singular mission: to decentralize aerospace and simulation knowledge for the Vietnamese engineering community.</p>
             </div>
 
-            <a href="https://research.oriviet.org/" class="mt-8 px-8 py-3 btn font-semibold rounded-lg transition duration-300">
+            <a href="https://research.oriviet.org/" class="capitalize mt-8 btn-white-on-transparent font-semibold rounded-lg transition duration-300">
                 Projects in development
             </a>
         </div>
@@ -34,18 +36,13 @@ const labsLogoPath = '/Logos/OrivietResearchLabsLogo.svg';
 <!--<p>Here, you will find original technical documentation, Vietnamese-language graphics tutorials, and foundational insights into the architecture behind Astrocelerate—Vietnam's first orbital simulation engine.</p> -->
 
 <style>
-    html, body {
-		overflow: hidden;
-	}
-
-    .btn {
-        background-color: transparent;
-        color: white;
-    }
-    .btn:hover {
-        background-color: white;
-        color: black;
-        text-shadow: none;
+    .background-main {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .hero-section {
@@ -69,8 +66,6 @@ const labsLogoPath = '/Logos/OrivietResearchLabsLogo.svg';
 
     .background-preview {
         position: absolute;
-		width: 40%;
-		height: auto;
     }
     .top-left {
 		top: 0;

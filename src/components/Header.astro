@@ -2,8 +2,8 @@
 const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 ---
 
-<header class="bg-black px-4 py-3 shadow-md flex relative">
-    <nav class="container mx-auto flex items-center justify-center h-16">
+<header class="header bg-black px-4 py-3 shadow-md h-16">
+    <nav class="container mx-auto flex items-center justify-center">
         <a href="/" class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center h-full"> {/* Make the 'a' tag take full height of nav */}
             <img
               src={logoPath}
@@ -14,14 +14,35 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
         <ul class="flex-grow flex justify-center items-center space-x-6">
             <li><a href="/research" class="font-bold nav-link uppercase">Research & Development</a></li>
             <li><a href="/team" class="font-bold nav-link uppercase">Team</a></li>
-            <li><a href="/about" class="font-bold nav-link uppercase">About</a></li>
-            <li><a href="/roadmap" class="font-bold nav-link uppercase">Roadmap</a></li>
+            
+            
+            <li>
+                <div class="nav-link-disabled font-bold uppercase relative group">
+                    About
+                    <span class="tooltip absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">Coming Soon</span>
+                </div>
+            </li>
+            <li>
+                <div class="nav-link-disabled font-bold uppercase relative group">
+                    Roadmap
+                    <span class="tooltip absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">Coming Soon</span>
+                </div>
+            </li>
         </ul>
     </nav>
 </header>
 
 
 <style>
+    .header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-shrink: 0;
+        z-index: 999;
+    }
+
     .nav-link {
         position: relative;
         padding-bottom: 2px; /* Space for the underline */
@@ -30,8 +51,8 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
     .nav-link::after {
         content: '';
         position: absolute;
-        right: 0;
         bottom: 0;
+        right: 0;
         width: 0%;
         height: 1px; /* Underline thickness */
         background-color: white; /* Underline color */
@@ -41,5 +62,15 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
         width: 100%; /* Expand underline on hover */
         left: 0;
         right: auto;
+    }
+
+    .nav-link-disabled {
+        color: #888; /* Dim the text to indicate it's disabled */
+        cursor: not-allowed; /* Change cursor to "not-allowed" */
+        pointer-events: auto; /* Allow hover events for the tooltip */
+    }
+
+    .nav-link-disabled .tooltip {
+        /* Tooltip specific styles are inlined with Tailwind for simplicity */
     }
 </style>

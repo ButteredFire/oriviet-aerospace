@@ -1,12 +1,32 @@
 @import "tailwindcss";
 
+
+:root {
+    --header-height: calc(var(--spacing) * 16);
+    --viewport-height: calc(100svh - var(--header-height));
+}
+  
+
 html, body {
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    left: 0;
+    top: 0;
     background-color: black;
     color: white;
 }
+
+
+/* This accounts for the header navbar */
+main {
+    min-height: var(--viewport-height);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -31,13 +51,6 @@ a {
 @property --tw-font-weight {
     syntax: "*";
     inherits: false;
-}
-
-/* This wrapper accounts for the header navbar */
-.main-wrapper {
-    min-height: calc(100vh - (var(--spacing) * 16));
-    display: flex;
-    flex-direction: column;
 }
 
 

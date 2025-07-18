@@ -1,7 +1,73 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+import TwoColumnLayout from '../../components/TwoColumnLayout.astro';
+
+import TheVisionContent from './PortfolioSections/Vision.mdx';
+import TheExecutionContent from './PortfolioSections/Execution.mdx';
+import TheHorizonContent from './PortfolioSections/Horizon.mdx';
+
+import { Image } from 'astro:assets';
+import portrait from '../../assets/General/FounderPortrait.png';
+import background from '../../assets/Background/FounderPortfolioBg.png';
 ---
 
 <Layout title='Founder Portfolio'>
-    <h2>Founder portfolio</h2>
+    <section>
+        <div class="absolute top-0 left-0 z-0">
+            <Image src={background} alt="Scenic background" class="object-cover h-screen" loading="eager"/>
+        </div>
+
+        <div class="relative flex items-center align-middle justify-end h-full mr-64 z-10">
+            <div class="text-7xl text-black">
+                <h2 class="font-extrabold">Dương Duy Nhật Minh</h2>
+            </div>
+        </div>
+
+        <div class="bottom-fade"></div>
+        <div></div>
+    </section>
+
+    <div class="padding" style="background-color: black;"></div>
+
+    <section style="background-color: grey;">
+        <TheVisionContent/>
+    </section>
+
+    <div class="padding"></div>
+    
+    <section style="background-color:brown;">
+        <TheExecutionContent/>
+    </section>
+    
+    <div class="padding"></div>
+
+    <section style="background-color:crimson;">
+        <TheHorizonContent/>
+    </section>
+    
+    <div class="padding"></div>
 </Layout>
+
+
+<style>
+    section {
+        position: relative;
+        width: 100%;
+        height: 100lvh;
+    }
+
+    .bottom-fade {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 50vh;
+        background-image: linear-gradient(180deg, transparent, black);
+    }
+
+    .padding {
+        width: 100%;
+        height: 20vh;
+        background-color: black;
+    }
+</style>

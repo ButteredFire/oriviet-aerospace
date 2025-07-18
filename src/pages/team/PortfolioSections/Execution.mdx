@@ -1,0 +1,35 @@
+---
+title: The Execution
+---
+
+import TwoColumnLayout from '../../../components/TwoColumnLayout.astro';
+
+import { Image } from 'astro:assets';
+import portrait from '../../../assets/General/FounderPortrait.png';
+
+# The Execution: Bridging Vision with Reality
+
+## Astrocelerate: Performance and Vision
+Astrocelerate, Vietnam's first commercial high-performance scientific spaceflight and orbital mechanics simulation engine, is engineered for real-time, physically accurate visualizations of satellite kinematics, launch trajectories, and maneuver simulations[cite: 16]. Beyond technical performance, Astrocelerate stands for something far greater: The assertion that world-class aerospace tools can emerge from within Vietnam, built not by legacy contractors, but by a new generation of engineers who refuse to wait for permission. Its mission is to empower academic institutions, disaster-response planners, space technologists, and national defense researchers with a transparent, extensible, and self-owned simulation platform. More than that, it represents technological sovereignty in a domain long dominated by external systems.
+
+<TwoColumnLayout class="p-6" style="flex-wrap: nowrap;">
+    <div slot="left">
+        <img src="../../../../src/assets/GIFs/AstrocelerateDemo.gif" alt="Astrocelerate real-time simulation" loading="lazy" style="width: 70%; height: auto;" />
+        <p>
+            Engineered 15,000+ line-of-code infrastructure built on Vulkan and custom physics integrators (RK4, Symplectic Euler). The engine achieves 260+ FPS on low-end computers under complex real-time spacecraft maneuver simulations, accurate satellite orbits, spacecraft maneuvers, and launch-to-recovery trajectories.
+        </p>
+    </div>
+    
+    <div slot="right">
+        <h3>Key Innovations:</h3>
+        <ul>
+            <li>**High Performance:** Achieves 260+ FPS even on low-end hardware.</li>
+            <li>**Custom Physics:** Utilizes RK4 and Symplectic Euler integrators.</li>
+            <li>**Time-Step System:** Designed for frame-stable 2-body to N-body physics simulation under variable loads.</li>
+            <li>**Modular Architecture:** Documented and modularized for future team expansion and plugin-based development.</li>
+        </ul>
+        <p>
+            I led all aspects of development, including technical research, system design, graphics implementation, and long-term roadmap planning.
+        </p>
+    </div>
+</TwoColumnLayout>

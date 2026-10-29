@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets'; // Astro's Image component for optimized images
 import landingPageBg from '../assets/Background/LandingPageBg.png';
 
-const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
+const logoPath = '/Logos/OrivietSystemsLogo-Mono.svg';
 ---
 
 <Layout>
 	<div class="hero-section">
 		<Image
 		  src={landingPageBg}
-		  alt="Oriviet Aerospace Background"
+		  alt="Oriviet Systems Background"
 		  class="hero-background-image hero-overlain-content"
 		  widths={[768, 1200, 1920]}
 		  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
@@ -19,7 +19,7 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 		<div class="hero-overlay"></div>
 	
 		<div class="hero-content hero-on-top">
-		  <img src={logoPath} alt="Oriviet Aerospace Logo" class="h-40 w-auto mb-5"/>
+		  <img src={logoPath} alt="Oriviet Systems Logo" class="h-40 w-auto mb-5"/>
 		  <h1 class="text-5xl font-bold mb-5 text-center">Grounded in Vietnam. Engineered for the stars.</h1>
 		  <p class="text-xl text-center max-w-2xl">
 			Explore our cutting-edge research and development in aerospace technology, shaping the future of spaceflight for Vietnam and humanity.
@@ -32,7 +32,7 @@ const logoPath = '/Logos/OrivietAerospaceLogo-Mono.svg';
 	</div>
 
 	<div class="bottom-text hero-on-top">
-		<p>Image: Chandra X-Ray Observatory orbiting the Earth. This is an in-engine screenshot of <a href="https://github.com/ButteredFire/Astrocelerate" target="_blank">Astrocelerate</a>, Oriviet Aerospace's flagship scientific simulation engine.</p>
+		<p>Image: Chandra X-Ray Observatory orbiting the Earth. This is an in-engine screenshot of <a href="https://github.com/ButteredFire/Astrocelerate" target="_blank">Astrocelerate</a>, Oriviet Systems's flagship scientific simulation engine.</p>
 	</div>
 </Layout>
 
